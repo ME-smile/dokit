@@ -23,9 +23,9 @@ class VmHelper {
   VM? get vm => VMServiceWrapper.instance.vm;
 
   Future<void> resolveVMInfo() async {
-    if (!VMServiceWrapper.instance.connected) {
-      return;
-    }
+    // if (!VMServiceWrapper.instance.connected) {
+    //   return;
+    // }
     await PackageInfo.fromPlatform().then((value) => packageInfo = value);
     updateMemoryUsage();
     updateFlutterVersion();
@@ -45,11 +45,11 @@ class VmHelper {
 
   updateMemoryUsage() {
     var mainId = VMServiceWrapper.instance.main?.id;
-    if (!VMServiceWrapper.instance.connected || mainId == null) {
-      return;
-    }
+    // if (!VMServiceWrapper.instance.connected || mainId == null) {
+    //   return;
+    // }
     VMServiceWrapper.instance.service
-        ?.getMemoryUsage(mainId)
+        ?.getMemoryUsage(mainId ?? '')
         .then((value) => memoryInfo[VMServiceWrapper.instance.main!] = value);
   }
 

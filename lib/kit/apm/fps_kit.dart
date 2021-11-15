@@ -93,7 +93,7 @@ class FpsPageState extends State<FpsPage> {
                         package: DK_PACKAGE_NAME, height: 16, width: 16),
                     margin: EdgeInsets.only(left: 22, right: 6),
                   ),
-                  Text('最近240帧耗时',
+                  Text(' time consuming on the latest 240 frames',
                       style: TextStyle(
                           color: Color(0xff333333),
                           fontWeight: FontWeight.normal,

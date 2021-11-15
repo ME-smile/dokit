@@ -23,7 +23,22 @@ class BasicInfoKit extends CommonKit {
   }
 }
 
-class BasicInfoPage extends StatelessWidget {
+class BasicInfoPage extends StatefulWidget {
+  @override
+  State<BasicInfoPage> createState() => _BasicInfoPageState();
+}
+
+class _BasicInfoPageState extends State<BasicInfoPage> {
+  @override
+  void initState() {
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      VmHelper.instance.resolveVMInfo().whenComplete(() {
+        setState(() {});
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

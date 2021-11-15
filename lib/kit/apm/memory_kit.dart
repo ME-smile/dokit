@@ -36,7 +36,6 @@ class MemoryKit extends ApmKit {
 
   @override
   void start() {
-    VMServiceWrapper.instance.connect();
     VmHelper vmHelper = VmHelper.instance;
     VMServiceWrapper.instance
         .connect()
@@ -99,6 +98,7 @@ class MemoryPageState extends State<MemoryPage> {
         }
       });
     }
+    setState(() {});
   }
 
   @override

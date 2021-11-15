@@ -7,6 +7,7 @@
 // Modified by linusflow on 2021/5/11 下午8:08
 //
 
+import 'package:dokit/kit/apm/vm/vm_service_wrapper.dart';
 import 'package:dokit/kit/observer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -88,6 +89,7 @@ class _DoKitAppState extends State<DoKitApp> {
     entries.add(OverlayEntry(builder: (BuildContext context) {
       return widget.origin;
     }));
+    VMServiceWrapper.instance.connect();
   }
 
   Iterable<LocalizationsDelegate<dynamic>> get _localizationsDelegates sync* {
